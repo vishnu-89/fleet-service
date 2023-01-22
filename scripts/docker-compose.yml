@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  db:
+    container_name: fleets-db
+    image: mysql:5.7
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - ./schemas.sql:/docker-entrypoint-initdb.d/fleets.sql

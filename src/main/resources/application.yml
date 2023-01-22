@@ -1,0 +1,30 @@
+spring:
+  flyway:
+    locations:
+      - classpath:db/migration
+  datasource:
+    url: jdbc:mysql://localhost:3306/fleet_db_dev?serverTimezone=UTC&useSSL=false
+    username: root
+    password:
+    hikari:
+      maximum-pool-size: 10
+      max-lifetime: 9000
+      minimum-idle: 5
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jpa:
+    open-in-view: false
+    show-sql: false
+  application:
+    name: fleet
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+
+server:
+  servlet:
+    context-path: /api
+
