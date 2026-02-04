@@ -29,7 +29,7 @@ class AssetsControllerTest {
     lateinit var assetController: AssetController
 
     @BeforeEach
-    open fun setUp() {
+    fun setUp() {
 
         mockMvc = MockMvcBuilders
             .standaloneSetup(assetController)
