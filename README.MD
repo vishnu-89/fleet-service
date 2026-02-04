@@ -19,6 +19,20 @@ Fleet service offers a REST API to handle these below use cases:
 3. Remove assets from a fleet
 4. Search for an asset by its VIN 
 5. Search for all assets in a fleet
+
+## API endpoints
+All endpoints are prefixed with `v1`.
+
+### Fleet API
+- **POST** `v1/fleets` - Create a fleet.
+- **GET** `v1/fleets/{fleetId}` - Get a fleet by ID.
+- **POST** `v1/fleets/{fleetId}/assets` - Add an asset to a fleet.
+- **GET** `v1/fleets/{fleetId}/assets` - List all assets in a fleet.
+- **DELETE** `v1/fleets/{fleetId}` - Delete a fleet and its assets.
+
+### Asset API
+- **DELETE** `v1/assets/{assetId}` - Remove an asset by ID.
+- **GET** `v1/assets/{vin}?fleetId={fleetId}` - Find an asset by VIN for a specific fleet.
    
 ## Constraints
    • An asset is identified by a Vehicle Identification Number (VIN) • The same asset can only occur within one fleet
