@@ -31,7 +31,7 @@ class FleetControllerTest {
     lateinit var fleetController: FleetController
 
     @BeforeEach
-    open fun setUp() {
+    fun setUp() {
 
         mockMvc = MockMvcBuilders
             .standaloneSetup(fleetController)
